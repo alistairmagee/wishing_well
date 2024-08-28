@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wedding Wishing Well for Jess and Alistair</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <h1>Jessica & Alistair</h1>
+      <h2>Digital Wishing Well</h2>
+    </div>
+    <div class="info-holder">
+      <p>Hi friends! We're so happy that you have been able to join us at our Special Day!</p>
+      </p>As the cliche goes, your presence is our present, but if you want to give us something we're not going to say no.
+      We've been living together for a while now, and have all we need for our home. And organising a wedding and a 
+      honeymoon while having a mortgage is a lot. So if you do want to help us out, cash is best. </p>
+
+      <p><em>CASH?!?</em></p>
+
+      <p><em>Who carries cash?</em></p>
+
+      <p>Yes, obviously, you just scanned a QR code. So you don't carry cash with you.</p>
+
+      <p>We got you.</p>
+      <div class="option-holder">
+        <div class="option-card option-left" id="bsb-card">
+          <h3>The best non-cash way to give us money:</h3>
+          <h3>Bank Transfer</h3>
+          <p>No fees. Instant. What's not to like!</p>
+          <p>We've got a PayID you can use. Or if you like living in the cashless future, but don't trust these new fangdangled 
+          PayID things you can still use the trusty BSB and Account Number System.</p>
+          <hr>
+          <div class="pay-id">
+            <p>For those that like one number to rule them all.</p>
+            <div class="flex-info">
+              <div class="flex-left">PayID: </div>
+              <div class="flex-right" id="pay-id">Get Pay ID number</div>
+              <button 
+                class="flex-button" onClick="copyToClipboard(this, 'test')">COPY</button>
+            </div>
+          </div>
+          <hr>
+          <div class="bsb-account-details">
+            <p>For those that like to input multiple things and pray they got it right</p>
+            <div class="flex-info">
+              <div class="flex-left">BSB: </div>
+              <div class="flex-right" id="bsb-number">082 429</div>
+              <button class="flex-button" onClick="copyToClipboard(this, '082429')">COPY</button>
+            </div>
+            <div class="flex-info">
+              <div class="flex-left">Account number: </div>
+              <div class="flex-right" id="account-number">931 743 304</div>
+              <button class="flex-button" onClick="copyToClipboard(this, '931743304')">COPY</button>
+            </div>
+            <div class="flex-info">
+              <div class="flex-left">Account name: </div>
+              <div class="flex-right" id="account-name">Jessica Sheather</div>
+              <button class="flex-button" onClick="copyToClipboard(this, 'Jessica Sheather')">COPY</button>
+            </div>
+          </div>
+        </div><!-- option card-->
+        <div class="option-card option-right hidden" id="credit-card">
+          <h3>I have a credit card, and dammit I want to use it!</h3>
+          <p>If you want to give us some money and using a credit card is easier for you, 
+          we've set up an account at My Wishing Well
+          where you can contribute to our wishing well using a credit card.</p> 
+          <p>There are some small fees with this option that aren't
+          charged with the bank transfer. </p>
+
+          <a href="https://app.mywishingwell.com.au/event/101723/" class="fake-button">Go to MyWishingWell.com.au</a>
+
+        </div> <!-- option card -->
+        <button 
+          id="card-swapper" 
+          class="big-button"
+          onClick="swapCards()">This Button only works with Javascript</button>
+      </div><!-- option holder --> 
+    </div> <!-- info holder -->
+    <script>
+      function copyToClipboard(button, text){
+        navigator.clipboard.writeText(text);
+        let old = button.innerHTML;
+        button.innerHTML = "DONE";
+        button.classList.add("clicked");
+        setTimeout(()=> {
+          button.innerHTML = old;
+          button.classList.remove("clicked");
+        }, 800)
+      }
+
+      const bigButton = document.getElementById("card-swapper");
+      console.log(bigButton);
+      const leftCard = document.getElementById("bsb-card");
+      const rightCard = document.getElementById("credit-card");
+      let currentCard = 0;
+
+
+      function swapCards() {
+        if(currentCard === 0){
+          leftCard.classList.add("hidden");
+          rightCard.classList.remove("hidden");
+          currentCard = 1;
+          bigButton.innerHTML = "Maybe a bank transfer would be easier?"
+          bigButton.scrollIntoView({ behaviour: "smooth", block: "bottom"});
+        }
+        else{
+          leftCard.classList.remove("hidden");
+          rightCard.classList.add("hidden");
+          currentCard = 0;
+          bigButton.innerHTML = "I'd rather use my credit card please!"
+          bigButton.scrollIntoView({ behaviour: "smooth", block: "bottom"});
+        }
+      }
+
+
+      bigButton.innerHTML = "I'd rather use my credit card please!"
+    </script>
+  </body>
+</html>
+
