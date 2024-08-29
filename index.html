@@ -37,9 +37,9 @@
             <p>For those that like one number to rule them all.</p>
             <div class="flex-info">
               <div class="flex-left">PayID: </div>
-              <div class="flex-right" id="pay-id">Get Pay ID number</div>
+              <div class="flex-right" id="pay-id">0424 969 599</div>
               <button 
-                class="flex-button" onClick="copyToClipboard(this, 'test')">COPY</button>
+                class="flex-button" onClick="copyToClipboard(this, '0424969599')">COPY</button>
             </div>
           </div>
           <hr>
@@ -104,14 +104,12 @@
           rightCard.classList.remove("hidden");
           currentCard = 1;
           bigButton.innerHTML = "Maybe a bank transfer would be easier?"
-          bigButton.scrollIntoView({ behaviour: "smooth", block: "bottom"});
         }
         else{
           leftCard.classList.remove("hidden");
           rightCard.classList.add("hidden");
           currentCard = 0;
           bigButton.innerHTML = "I'd rather use my credit card please!"
-          bigButton.scrollIntoView({ behaviour: "smooth", block: "bottom"});
         }
       }
 

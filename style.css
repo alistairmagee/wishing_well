@@ -139,10 +139,10 @@ p {
 .option-card {
   padding: 20px;
   min-height: 400px;
+  width: 100%;
   margin: auto;
   margin-left: -20px;
   margin-bottom: 10px;
-  width: 100%;
   visibility: visible;
   opacity:1;
   background-color: rgba(var(--purple-rgb), .86);
@@ -162,6 +162,7 @@ p {
   transition:opacity 0.8s linear,
     transform 0.5s linear;
 }
+
 
 .hidden {
   visibility: hidden;
