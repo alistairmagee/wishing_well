@@ -28,6 +28,7 @@
 html {
   width:100%;
   height:100%;
+  max-width: 100%;
   background-color: #aeb79d;
   color:#47523d;
   width:100%;
@@ -40,9 +41,13 @@ body {
   min-height:100%;
   font-family:branded-font, sans-serif;
   text-align: center;
-  font-size: 100%;
+  font-size: 130%;
   background-color: white;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 button {
@@ -115,6 +120,7 @@ hr {
 .header-wrapper {
   height: 350px;
   max-width: 1650px;
+  width: 100%;
   background-image: url(Wishing-Well-Banner.jpg);
   background-position: 20%;
   display: flex;
@@ -126,7 +132,7 @@ hr {
 }
 
 .info-holder {
-  max-width: 40rem;
+  max-width: 45rem;
   margin: auto;
   padding-bottom: 30px;
 }
@@ -139,9 +145,8 @@ p {
 .option-card {
   padding: 20px;
   min-height: 400px;
-  width: 100%;
+  width: 80%;
   margin: auto;
-  margin-left: -20px;
   margin-bottom: 10px;
   visibility: visible;
   opacity:1;
@@ -168,17 +173,19 @@ p {
   visibility: hidden;
   height: 0;
   min-height: 0;
+  width: 0;
+  min-width: 0;
   padding: 0;
   margin: 0;
   opacity:0;
 }
 
 .option-left.hidden {
-  transform: translateX(-400px);
+  transform: translateX(-200px);
 }
 
 .option-right.hidden {
-  transform: translateX(400px);
+  transform: translateX(200px);
 }
 
 .flex-info {

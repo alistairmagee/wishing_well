@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Wedding Wishing Well for Jess and Alistair</title>
     <link rel="stylesheet" href="style.css">
@@ -103,13 +103,19 @@
           leftCard.classList.add("hidden");
           rightCard.classList.remove("hidden");
           currentCard = 1;
-          bigButton.innerHTML = "Maybe a bank transfer would be easier?"
+          bigButton.innerHTML = "Maybe a bank transfer would be easier?";
+          setTimeout(() => {
+            bigButton.scrollIntoView();
+          }, 500);
         }
         else{
           leftCard.classList.remove("hidden");
           rightCard.classList.add("hidden");
           currentCard = 0;
-          bigButton.innerHTML = "I'd rather use my credit card please!"
+          bigButton.innerHTML = "I'd rather use my credit card please!";
+          setTimeout(() => {
+            bigButton.scrollIntoView();
+          }, 500);
         }
       }
 
